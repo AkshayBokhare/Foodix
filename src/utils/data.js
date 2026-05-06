@@ -68,5 +68,15 @@ export const restaurants = [
             rating: "4.9 ⭐",
             price: "₹ 450 for one"
         }
+    },
+    {
+        data: {
+            id: "7",
+            imgurl: "https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/inline-images/Wow%21%20Momo.jpg",
+            name: "WoW MOMOs",
+            cuisine: "Momos",
+            rating: "4.9 ⭐",
+            price: "₹ 250 for one"
+        }
     }
 ];
