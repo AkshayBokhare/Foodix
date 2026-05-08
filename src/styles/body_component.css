@@ -27,3 +27,9 @@
     cursor: pointer;
     margin-bottom: 20px;
 }
+.searchBar{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    }

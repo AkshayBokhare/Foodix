@@ -1,27 +1,55 @@
 import "../styles/body_component.css"
 import CardItems from "./CardItems";
 import { restaurants as data } from "../utils/data.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const BodyComponent = () => {
     //State variable
     const [restoList, setRestoList] = useState(data);
     const [filterRestoList, setfilterRestoListCount] = useState(data.length);
     const [count, setCount] = useState(0);
+    const [searchText, setSearchText] = useState("");
+
+
+    const fetchData = async () => {
+        const data = await fetch("https://dummyjson.com/carts");
+        const jsonData = await data.json();
+        console.log("API jsonData", jsonData);
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+
+    if (restoList.length === 0) {
+        return <h1> No Restaurant Found </h1>
+    }
+
 
     return (
         <div className="body">
-            <div className="search-bar">
-                Search Bar
+            <div className="searchBar">
+                <input className="search-bar" type="text" placeholder="Search for restaurant"
+                    value={searchText}
+                    onChange={(e) => {
+                        setSearchText(e.target.value);
+                    }}
+                >
+                </input>
+                <button className="search-btn" onClick={() => {
+                    restoList.filter((res) => {
+                        if (res.data.name.toLowerCase().includes(searchText.toLowerCase())) {
+                            setRestoList([res]);
+                        }
+                    });
+                }}>Search</button>
             </div>
+
             <button className="filter-btn"
                 onClick={() => {
 
                     const filterRestoList = restoList.filter(res => res.data.rating > 4);
-                    console.log(restoList.length);
-                    console.log(filterRestoList);
-
-                    console.log(filterRestoList.length);
                     setfilterRestoListCount(filterRestoList.length);
                     setRestoList(filterRestoList);
                 }}>
@@ -30,7 +58,6 @@ const BodyComponent = () => {
 
             <div className="food-items-card">
                 {restoList.map((restaurant) => (
-                    console.log("Restaurants in list: " + restoList.length),
                     <CardItems
                         key={restaurant.data.id}
                         restaurant={restaurant}
@@ -43,13 +70,13 @@ const BodyComponent = () => {
             <div className="counter">
                 <h1> Your Count Is: {count}</h1>
                 <button className="counter-btn" onClick={
-                    () => setCount(count + 1)       
+                    () => setCount(count + 1)
                 }>
                     Click to See Count
                 </button>
             </div>
         </div>
-       
+
     );
 }
 
