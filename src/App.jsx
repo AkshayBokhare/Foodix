@@ -1,11 +1,11 @@
 import HeaderLayout from './componets/HeaderLayout'
-import BodyComponent from './componets/BodyComponent'
+import {Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
       <HeaderLayout />
-      <BodyComponent />
+      <Outlet />
     </>
   );
 }

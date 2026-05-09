@@ -1,6 +1,7 @@
 import Foodix_logo from '/src/assets/Foodix_logo.png';
 import '../styles/header_layout.css';
 import { useState } from 'react';
+import {NavLink} from 'react-router-dom';
 
 const HeaderLayout = () => {
 
@@ -14,10 +15,11 @@ const HeaderLayout = () => {
             </div>
             <div className="nav-items">
                 <ul >
-                    <li>Home</li>
-                    <li>Contact</li>
-                    <li>About</li>
-                    <li>Card</li>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/contact">Contact</NavLink></li>
+                    <li><NavLink to="/about">About</NavLink></li>
+                    <li><NavLink to="/card">Card</NavLink></li>
+                    
                     <button className="login-btn" onClick={ () => {
                         btnNameReact=== "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
                       }}>
