@@ -1,7 +1,9 @@
 import "../styles/body_component.css"
 import CardItems from "./CardItems";
 import { restaurants as data } from "../utils/data.js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useFetchData from "../utils/useFetchData";
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const BodyComponent = () => {
     //State variable
@@ -9,23 +11,21 @@ const BodyComponent = () => {
     const [filterRestoList, setfilterRestoListCount] = useState(data.length);
     const [count, setCount] = useState(0);
     const [searchText, setSearchText] = useState("");
+    const onlineStatus = useOnlineStatus();
 
-
-    const fetchData = async () => {
-        const data = await fetch("https://dummyjson.com/carts");
-        const jsonData = await data.json();
-        console.log("API jsonData", jsonData);
-    };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
+    const customHook = useFetchData();
+    console.log("CustomHook", customHook);
 
 
     if (restoList.length === 0) {
         return <h1> No Restaurant Found </h1>
     }
 
+    if (onlineStatus === false) {
+        return (
+            <h1>OOPS YOU ARE OFFLINE...!</h1>
+        );
+    }
 
     return (
         <div className="body">
