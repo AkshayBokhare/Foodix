@@ -2,21 +2,23 @@ export const restaurants = [
     {
         data: {
             id: "1",
-            imgurl:"https://b.zmtcdn.com/data/pictures/0/20866140/d71443c786caaf06694b50a699a8a5d6_featured_v2.jpg",
+            imgurl: "https://b.zmtcdn.com/data/pictures/0/20866140/d71443c786caaf06694b50a699a8a5d6_featured_v2.jpg",
             name: "McDonald's",
             cuisine: "Burgers, Fast Food",
             rating: 5,
-            price: "₹ 300 for one"
+            price: "₹ 300 for one",
+            promoted: false
         }
     },
     {
         data: {
             id: "2",
-            imgurl:"https://tb-static.uber.com/prod/image-proc/processed_images/a7c701cd77728f6ded280d8d948db4e4/5283d81c664b43c5f57a3a186d273063.jpeg",
+            imgurl: "https://tb-static.uber.com/prod/image-proc/processed_images/a7c701cd77728f6ded280d8d948db4e4/5283d81c664b43c5f57a3a186d273063.jpeg",
             name: "Domino's Pizza",
             cuisine: "Pizza, Italian",
             rating: 4.2,
-            price: "₹ 400 for one"
+            price: "₹ 400 for one",
+            promoted: true
         }
     },
     {
@@ -25,8 +27,10 @@ export const restaurants = [
             imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJuR6mOoDAtz6QiDum9dk5Rlt2YoD_FRfgLg&s",
             name: "Haldiram's",
             cuisine: "Indian, Snacks, Sweets",
-            rating:3.8,
-            price: "₹ 250 for one"
+            rating: 3.8,
+            price: "₹ 250 for one",
+            promoted: false
+
         }
     },
     {
@@ -36,7 +40,8 @@ export const restaurants = [
             name: "Subway",
             cuisine: "Sandwiches, Healthy Food",
             rating: 4.7,
-            price: "₹ 350 for one"
+            price: "₹ 350 for one",
+            promoted: true
         }
     },
     {
@@ -46,7 +51,8 @@ export const restaurants = [
             name: "Barbeque Nation",
             cuisine: "BBQ, North Indian, Continental",
             rating: 4.7,
-            price: "₹ 1200 for one"
+            price: "₹ 1200 for one",
+            promoted: false
         }
     },
     {
@@ -56,7 +62,8 @@ export const restaurants = [
             name: "Burger King",
             cuisine: "Burgers, Fast Food",
             rating: 3.1,
-            price: "₹ 280 for one"
+            price: "₹ 280 for one",
+            promoted: false
         }
     },
     {
@@ -66,7 +73,8 @@ export const restaurants = [
             name: "Paradise Biryani",
             cuisine: "Biryani, Hyderabadi",
             rating: 4.4,
-            price: "₹ 450 for one"
+            price: "₹ 450 for one",
+            promoted: true
         }
     },
     {
@@ -76,7 +84,74 @@ export const restaurants = [
             name: "WoW MOMOs",
             cuisine: "Momos",
             rating: 4,
-            price: "₹ 250 for one"
+            price: "₹ 250 for one",
+            promoted: false
+        }
+    },
+    {
+        data: {
+            id: "9",
+            imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvnFDmPZKUr2Va2SvkLprHnhPLOEhsqT6Rfg&s",
+            name: "Akshay Nation",
+            cuisine: "BBQ, North Indian, Continental",
+            rating: 4.7,
+            price: "₹ 1200 for one",
+            promoted: false
+        }
+    },
+    {
+        data: {
+            id: "10",
+            imgurl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/82/2d/cb/sen5es.jpg?w=800&h=800&s=1",
+            name: "Senses",
+            cuisine: "Burgers, Fast Food",
+            rating: 3.1,
+            price: "₹ 280 for one",
+            promoted: false
+        }
+    },
+    {
+        data: {
+            id: "11",
+            imgurl: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/61/16/40/buffet.jpg?w=1400&h=800&s=1",
+            name: "Mosaic",
+            cuisine: "Biryani, Hyderabadi",
+            rating: 4.4,
+            price: "₹ 450 for one",
+            promoted: true
+        }
+    },
+    {
+        data: {
+            id: "12",
+            imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ-2SBlbsU8mWT9yh-hmIbeUFUalSbniWBbw&s",
+            name: "gstatic",
+            cuisine: "Momos",
+            rating: 4,
+            price: "₹ 250 for one",
+            promoted: false
+        }
+    },
+    {
+        data: {
+            id: "13",
+            imgurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVRcfXjB3D9JuDrexZwfYuMplQIF4A5hWN2w&s",
+            name: "ohotelsindia",
+            cuisine: "Momos",
+            rating: 4,
+            price: "₹ 250 for one",
+            promoted: false
+        }
+    },
+    {
+        data: {
+            id: "14",
+            imgurl: "https://media-cdn.tripadvisor.com/media/photo-m/1280/26/ac/0f/89/salle-restaurant-nuit.jpg",
+            name: "tripadvisor",
+            cuisine: "Momos",
+            rating: 4,
+            price: "₹ 250 for one",
+            promoted: false
         }
     }
 ];

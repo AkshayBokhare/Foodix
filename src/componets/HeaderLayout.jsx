@@ -18,11 +18,12 @@ const HeaderLayout = () => {
             </div>
             <div className="nav-items">
                 <ul >
-                    <li>Online Status : {onlineStatus ?  "💚" :  "❤️"}</li>
+                    <li>Online Status : {onlineStatus ? "💚" : "❤️"}</li>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
                     <li><NavLink to="/card">Card</NavLink></li>
+                    <li><NavLink to="/tailwindcss">Tailwind Css</NavLink></li>
 
                     <button className="login-btn" onClick={() => {
                         btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
