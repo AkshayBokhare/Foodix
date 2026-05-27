@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { restaurants } from "../utils/data";
 import { restaurantMenus } from "../utils/menuData";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -14,10 +16,18 @@ const RestaurantMenu = () => {
     setOpenSection(openSection === categoryId ? null : categoryId);
   };
 
+  const dispatch = useDispatch();
+
+
+  const handelAddItem = (item) => {
+    //Dispatuch an Action
+    dispatch(addItem(item))
+  }
+
   return (
+    
     <div className="min-h-screen bg-gray-100 py-8 px-4 flex justify-center">
       <div className="w-full max-w-2xl">
-
         {/* Restaurant Header Card */}
         <div className="bg-white rounded-2xl shadow-sm p-6 mb-5 text-center">
           <h1 className="text-2xl font-bold text-gray-900">
@@ -57,9 +67,8 @@ const RestaurantMenu = () => {
                 {category.items.map((item, idx) => (
                   <div
                     key={item.id}
-                    className={`flex items-center justify-between px-6 py-4 gap-5 ${
-                      idx !== 0 ? "border-t border-gray-200" : ""
-                    }`}
+                    className={`flex items-center justify-between px-6 py-4 gap-5 ${idx !== 0 ? "border-t border-gray-200" : ""
+                      }`}
                   >
                     {/* Left: name, description, price */}
                     <div className="flex-1">
@@ -75,7 +84,8 @@ const RestaurantMenu = () => {
                         alt={item.name}
                         className="w-24 h-24 object-cover rounded-xl shadow-sm"
                       />
-                      <button className="w-full bg-white text-green-600 border-2 border-green-500 py-1 rounded-lg font-bold text-sm shadow hover:bg-green-50 active:scale-95 transition-all">
+                      <button className="w-full bg-white text-green-600 border-2 border-green-500 py-1 rounded-lg font-bold text-sm shadow hover:bg-green-50 active:scale-95 transition-all" 
+                        onClick={() => handelAddItem(item)}>
                         ADD +
                       </button>
                     </div>

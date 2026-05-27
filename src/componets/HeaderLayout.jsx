@@ -3,13 +3,17 @@ import '../styles/header_layout.css';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import { useSelector } from 'react-redux';
 
 const HeaderLayout = () => {
-
 
     const [btnNameReact, setBtnNameReact] = useState("Login");
     const onlineStatus = useOnlineStatus();
 
+    //subscribing to store using selector Selector
+    const cartItems = useSelector((store) => store.cart.items);
+
+    console.log(cartItems)
 
     return (
         <><div className="header">
@@ -22,7 +26,7 @@ const HeaderLayout = () => {
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/contact">Contact</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
-                    <li><NavLink to="/card">Card</NavLink></li>
+                    <li><NavLink to="/cart">Card ({cartItems.length})</NavLink></li>
                     <li><NavLink to="/tailwindcss">Tailwind Css</NavLink></li>
 
                     <button className="login-btn" onClick={() => {
